@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
         // notes array list --> array adapter --> list view
         // list view cannot read data directly from arraylist , need array adapter
         arrayAdapter = new ArrayAdapter
-                (this, android.R.layout.simple_list_item_1, notes);
+                (this, R.layout.list_item, R.id.textView, notes);
 
         listView.setAdapter(arrayAdapter);
 
