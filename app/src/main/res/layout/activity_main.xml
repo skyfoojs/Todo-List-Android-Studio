@@ -5,14 +5,17 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="#D286E6">
 
 
     <ListView
-        android:layout_width="match_parent"
+        android:background="#D286E6"
+        android:backgroundTint="#D286E6"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
+        android:layout_marginTop="30dp"
+        android:paddingStart="15dp"
         android:id="@+id/listView"
         tools:listitem="@layout/list_item"
         android:dividerHeight="10.0sp"

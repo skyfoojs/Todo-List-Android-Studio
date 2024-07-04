@@ -5,15 +5,30 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".note_editor">
+    tools:context=".note_editor"
+    android:background="#D286E6">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/note_editor_header"
+        android:id="@+id/header"
+        android:layout_marginLeft="30dp"
+        android:textSize="30sp"
+        android:layout_marginTop="30dp"
+        android:textStyle="bold"/>
 
     <EditText
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_below="@id/header"
+        android:padding="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_width="350dp"
+        android:layout_height="400dp"
         android:inputType="textMultiLine"
+        android:layout_centerHorizontal="true"
         android:ems="10"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
         android:id="@+id/editText"
-        android:gravity="top|left" />
+        android:gravity="top"
+        android:hint="@string/edit_text_hint"
+        android:background="@drawable/note_editor_layout"/>
 </RelativeLayout>

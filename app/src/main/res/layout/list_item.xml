@@ -10,7 +10,8 @@
     app:cardElevation="15dp"
     android:backgroundTint="#ECCEED"
     app:cardCornerRadius="20dp"
-    android:layout_centerVertical="true">
+    android:layout_centerVertical="true"
+    android:layout_centerHorizontal="true">
 
     <RelativeLayout
         android:layout_width="match_parent"
