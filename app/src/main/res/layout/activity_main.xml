@@ -19,4 +19,13 @@
         android:paddingStart="15dp"
         tools:listitem="@layout/list_item" />
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/baseline_add_24"
+        android:layout_margin="20dp"
+        android:backgroundTint="#D628E0"
+        android:id="@+id/add_note_floating_action"/>
 </RelativeLayout>

@@ -23,7 +23,7 @@
             android:layout_height="50dp"
             android:gravity="center"
             android:layout_centerHorizontal="true"
-            android:text="GHeloo"
+            android:text=""
             android:textSize="25sp"
             android:id="@+id/textView"
             android:textAlignment="center"/>
