@@ -37,7 +37,7 @@
         android:layout_height="60dp"
         android:layout_below="@id/editText"
         android:id="@+id/add_list_button"
-        android:background="@drawable/add_list_button"
+        android:background="@drawable/button"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:text="@string/add_list_button"

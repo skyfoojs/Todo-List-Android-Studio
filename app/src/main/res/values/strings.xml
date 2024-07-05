@@ -4,4 +4,13 @@
     <string name="note_editor_header">Type Your Note:</string>
     <string name="splash_screen_text">Welcome To Your To-Do List</string>
     <string name="add_list_button">Add List</string>
+    <string name="about_us_header">WHO WE ARE</string>
+    <string name="about_us_content">Introducing our To-Do List Application, the best tool for task management and productivity enhancement.
+        Our goal with this app is to make your life easier by offering a robust and user-friendly to-do list app for Android.
+        Our group is enthusiastic about creating cutting-edge solutions that support your goal-achieving, effective prioritization,
+        and organizational skills. You can easily manage your tasks anytime,
+        anywhere with the help of this application\'s features, which include configurable task lists.
+        Come along with us as we change the way you approach your everyday activities and help you reach your greatest potential.
+    </string>
+    <string name="back_to_home_page">Back To Home</string>
 </resources>
