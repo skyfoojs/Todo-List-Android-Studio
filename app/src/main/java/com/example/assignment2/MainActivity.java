@@ -24,6 +24,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import java.util.ArrayList;
 import java.util.HashSet;
 
@@ -37,7 +39,8 @@ public class MainActivity extends AppCompatActivity {
     // arraylist --> array adapter --> listview
     static ArrayList<String> notes = new ArrayList<>();
     static ArrayAdapter arrayAdapter;
-
+    // To get the FloatActionButton object from XML file.
+    private static FloatingActionButton floatingActionbuttonForAddList;
 
     // create a menu bar for the apps
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -84,6 +87,7 @@ public class MainActivity extends AppCompatActivity {
 
         // get the list view object from xml files
         ListView listView = (ListView) findViewById(R.id.listView);
+        floatingActionbuttonForAddList = (FloatingActionButton) findViewById(R.id.add_note_floating_action) ;
 
         // setup the shared preferences object in this app
         // for private use only, the SP aka file can be accessed by this app only
@@ -191,5 +195,12 @@ public class MainActivity extends AppCompatActivity {
 
 
                 });
+
+        floatingActionbuttonForAddList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, note_editor.class));
+            }
+        });
     }
 }
