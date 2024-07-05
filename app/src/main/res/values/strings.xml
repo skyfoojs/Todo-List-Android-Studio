@@ -2,4 +2,6 @@
     <string name="app_name">Assignment2</string>
     <string name="edit_text_hint">Enter Your Text Here</string>
     <string name="note_editor_header">Type Your Note:</string>
+    <string name="splash_screen_text">Welcome To Your To-Do List</string>
+    <string name="add_list_button">Add List</string>
 </resources>

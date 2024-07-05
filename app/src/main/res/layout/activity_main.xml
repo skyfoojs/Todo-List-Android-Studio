@@ -6,12 +6,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="#D286E6">
+    android:background="#E3D2E7">
 
 
     <ListView
-        android:background="#D286E6"
-        android:backgroundTint="#D286E6"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_marginTop="30dp"

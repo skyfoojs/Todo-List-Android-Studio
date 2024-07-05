@@ -6,6 +6,8 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 
 import androidx.activity.EdgeToEdge;
@@ -24,7 +26,8 @@ public class note_editor extends AppCompatActivity {
     // or delete the detail
 
     int noteId;  // we need to know the task ID, different task different ID
-
+    // Create an instace variable for the Add List Button
+    private static Button buttonForAddList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +41,8 @@ public class note_editor extends AppCompatActivity {
 
         // get the edit text object from xml file
         EditText editText = (EditText) findViewById(R.id.editText);
+        // get button object from xml file
+        buttonForAddList = (Button) findViewById(R.id.add_list_button);
 
         // get the intent object from main activity
         Intent intent = getIntent();
@@ -111,6 +116,11 @@ public class note_editor extends AppCompatActivity {
 
         });  // end of listener
 
-
+        buttonForAddList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(note_editor.this, MainActivity.class));
+            }
+        });
     }
 }

@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".note_editor"
-    android:background="#D286E6">
+    android:background="#E3D2E7">
 
     <TextView
         android:layout_width="wrap_content"
@@ -31,4 +31,17 @@
         android:gravity="top"
         android:hint="@string/edit_text_hint"
         android:background="@drawable/note_editor_layout"/>
+
+    <Button
+        android:layout_width="180dp"
+        android:layout_height="60dp"
+        android:layout_below="@id/editText"
+        android:id="@+id/add_list_button"
+        android:background="@drawable/add_list_button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="@string/add_list_button"
+        android:textColor="#CBCBCB"
+        android:textSize="25sp"
+        android:textStyle="bold" />
 </RelativeLayout>

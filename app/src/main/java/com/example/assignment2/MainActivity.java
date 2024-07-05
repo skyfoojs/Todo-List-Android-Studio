@@ -1,5 +1,6 @@
 package com.example.assignment2;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -13,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 
 import androidx.activity.EdgeToEdge;
@@ -36,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
     static ArrayList<String> notes = new ArrayList<>();
     static ArrayAdapter arrayAdapter;
 
+
     // create a menu bar for the apps
     public boolean onCreateOptionsMenu(Menu menu) {
 
@@ -54,6 +57,13 @@ public class MainActivity extends AppCompatActivity {
         super.onOptionsItemSelected(item);
         if (item.getItemId() == R.id.add_note) {
             Intent intent = new Intent(getApplicationContext(), note_editor.class);  // open the link and page
+            startActivity(intent);
+
+            return true;  // the user select add menu item
+        }
+        // If user select About Us Page
+        if (item.getItemId() == R.id.about_us) {
+            Intent intent = new Intent(getApplicationContext(), AboutUs.class);  // open the link and page
             startActivity(intent);
 
             return true;  // the user select add menu item
