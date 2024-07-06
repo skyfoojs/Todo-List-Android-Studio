@@ -24,6 +24,7 @@
             android:gravity="center"
             android:layout_centerHorizontal="true"
             android:text=""
+            android:fontFamily="@font/changa_font"
             android:textSize="25sp"
             android:id="@+id/textView"
             android:textAlignment="center"/>

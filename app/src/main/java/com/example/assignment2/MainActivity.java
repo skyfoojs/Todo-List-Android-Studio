@@ -8,6 +8,8 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -24,6 +26,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.google.android.material.button.MaterialButton;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
@@ -41,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
     static ArrayAdapter arrayAdapter;
     // To get the FloatActionButton object from XML file.
     private static FloatingActionButton floatingActionbuttonForAddList;
+    private static Button cancelButton;
+    private static Button yesButton;
 
     // create a menu bar for the apps
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -74,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
         return false;  // the user did not select the menu item
     }
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -108,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
         if (set == null) {  // if the set is empty no user input yet
             notes.add("Example note");
         } else {
-            notes = new ArrayList(set);  // display the user input
+            notes = new ArrayList<>(set);  // display the user input
         }  // end if
 
         // use an array adapter object to attach the notes arraylist to the
@@ -155,41 +161,44 @@ public class MainActivity extends AppCompatActivity {
                         // create a new alert dialog box
                         // if the user click yes button
                         // if the the user click no button
-                        new AlertDialog.Builder(MainActivity.this)
-                                .setIcon(android.R.drawable.ic_dialog_alert)
-                                .setTitle("Are you sure?")
-                                .setMessage("Do you want to delete this note?")
-                                .setPositiveButton("Yes",
-                                        new DialogInterface.OnClickListener() {
+                        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                        View dialogView = getLayoutInflater().inflate(R.layout.custom_alert_dialog, null);
+                        builder.setView(dialogView);
+                        AlertDialog dialog = builder.create();
 
-                                            public void onClick(DialogInterface dialogInterface, int i) {
+                        cancelButton = dialogView.findViewById(R.id.cancel_button);
+                        yesButton = dialogView.findViewById(R.id.yes_button);
 
+                        cancelButton.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                dialog.dismiss();
+                            }
+                        });
 
-                                                notes.remove(itemToDelete);
-                                                // remove items on the notes array list
-                                                arrayAdapter.notifyDataSetChanged();
-                                                // update the listview via array adapter
+                        yesButton.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                notes.remove(itemToDelete);
+                                // remove items on the notes array list
+                                arrayAdapter.notifyDataSetChanged();
+                                // update the listview via array adapter
 
-                                                SharedPreferences sharedPreferences =
-                                                        getApplicationContext().getSharedPreferences
-                                                                ("com.example.assignment2",
-                                                                        Context.MODE_PRIVATE);  // open SP or file
+                                SharedPreferences sharedPreferences =
+                                        getApplicationContext().getSharedPreferences
+                                                ("com.example.assignment2",
+                                                        Context.MODE_PRIVATE);  // open SP or file
 
-                                                HashSet<String> set = new HashSet(MainActivity.notes);
-                                                // convert array list to hash set
+                                HashSet<String> set = new HashSet(MainActivity.notes);
+                                // convert array list to hash set
 
-                                                sharedPreferences.edit().putStringSet("notes", set).apply();
-                                                // open the SP, put new data into SP, save all changes
-                                                // you can edit or delete one item at one time only
-
-                                            }
-                                        }
-                                )
-
-                                .setNegativeButton("No", null)
-                                .show();
-
-
+                                sharedPreferences.edit().putStringSet("notes", set).apply();
+                                // open the SP, put new data into SP, save all changes
+                                // you can edit or delete one item at one time only
+                                dialog.dismiss();
+                            }
+                        });
+                        dialog.show();
                         return true;
                     }
 

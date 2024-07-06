@@ -8,18 +8,32 @@
     tools:context=".note_editor"
     android:background="#E3D2E7">
 
-    <TextView
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/note_editor_header"
-        android:id="@+id/header"
-        android:layout_marginLeft="30dp"
-        android:textSize="30sp"
-        android:layout_marginTop="30dp"
-        android:textStyle="bold"/>
+        android:id="@+id/linearLayout"
+        android:orientation="horizontal"
+        android:layout_marginTop="15dp">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_arrow_back_ios_new_24"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:id="@+id/back_button"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/note_editor_header"
+            android:id="@+id/header"
+            android:layout_marginStart="15dp"
+            android:fontFamily="@font/serif_font"
+            android:textSize="30sp"
+            android:textStyle="bold"/>
+    </LinearLayout>
 
     <EditText
-        android:layout_below="@id/header"
+        android:layout_below="@id/linearLayout"
         android:padding="10dp"
         android:layout_marginTop="20dp"
         android:layout_width="350dp"
@@ -30,7 +44,8 @@
         android:id="@+id/editText"
         android:gravity="top"
         android:hint="@string/edit_text_hint"
-        android:background="@drawable/note_editor_layout"/>
+        android:background="@drawable/note_editor_layout"
+        android:fontFamily="@font/changa_font"/>
 
     <Button
         android:layout_width="180dp"
@@ -42,6 +57,6 @@
         android:layout_marginTop="20dp"
         android:text="@string/add_list_button"
         android:textColor="#CBCBCB"
-        android:textSize="25sp"
+        android:textSize="23sp"
         android:textStyle="bold" />
 </RelativeLayout>

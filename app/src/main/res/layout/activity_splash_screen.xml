@@ -28,8 +28,9 @@
         android:text="@string/splash_screen_text"
         android:textAlignment="center"
         android:textColor="@android:color/holo_blue_light"
-        android:textSize="40sp"
+        android:textSize="45sp"
         android:textStyle="bold"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/bmi_logo"/>
+        android:layout_below="@+id/bmi_logo"
+        android:fontFamily="@font/teko_font"/>
 </RelativeLayout>
