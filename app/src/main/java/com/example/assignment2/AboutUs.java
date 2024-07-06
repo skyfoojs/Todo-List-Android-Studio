@@ -27,6 +27,7 @@ public class AboutUs extends AppCompatActivity {
         // To get the Button object from XML file
         backToHome = (Button) findViewById(R.id.back_to_home);
 
+        // Set OnClickListener for back to home button.
         backToHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

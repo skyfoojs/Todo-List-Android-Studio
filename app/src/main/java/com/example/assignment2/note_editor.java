@@ -49,6 +49,7 @@ public class note_editor extends AppCompatActivity {
         EditText editText = (EditText) findViewById(R.id.editText);
         // get button object from xml file
         buttonForAddList = (Button) findViewById(R.id.add_list_button);
+        // get back button object from xml file
         backButton = (ImageView) findViewById(R.id.back_button);
 
         // get the intent object from main activity
@@ -123,6 +124,7 @@ public class note_editor extends AppCompatActivity {
 
         });  // end of listener
 
+        // Set onClickListener for button to add notes.
         buttonForAddList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -130,6 +132,7 @@ public class note_editor extends AppCompatActivity {
             }
         });
 
+        // Set onClickListener for back button to back to the main page.
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

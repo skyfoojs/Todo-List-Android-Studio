@@ -42,7 +42,6 @@ public class MainActivity extends AppCompatActivity {
     // arraylist --> array adapter --> listview
     static ArrayList<String> notes = new ArrayList<>();
     static ArrayAdapter arrayAdapter;
-    // To get the FloatActionButton object from XML file.
     private static FloatingActionButton floatingActionbuttonForAddList;
     private static Button cancelButton;
     private static Button yesButton;
@@ -93,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
 
         // get the list view object from xml files
         ListView listView = (ListView) findViewById(R.id.listView);
+        // To get the FloatActionButton object from XML file.
         floatingActionbuttonForAddList = (FloatingActionButton) findViewById(R.id.add_note_floating_action) ;
 
         // setup the shared preferences object in this app
@@ -159,16 +159,16 @@ public class MainActivity extends AppCompatActivity {
                         final int itemToDelete = i;  // which item the user wish to delete
 
                         // create a new alert dialog box
-                        // if the user click yes button
-                        // if the the user click no button
                         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                         View dialogView = getLayoutInflater().inflate(R.layout.custom_alert_dialog, null);
                         builder.setView(dialogView);
                         AlertDialog dialog = builder.create();
 
+                        // To get the buttons from XML file.
                         cancelButton = dialogView.findViewById(R.id.cancel_button);
                         yesButton = dialogView.findViewById(R.id.yes_button);
 
+                        // Set onClickListener for the Cancel Button.
                         cancelButton.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
@@ -176,6 +176,7 @@ public class MainActivity extends AppCompatActivity {
                             }
                         });
 
+                        // Set onClickListener for the Yes Button.
                         yesButton.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
@@ -205,6 +206,7 @@ public class MainActivity extends AppCompatActivity {
 
                 });
 
+        // Set onClickListener for the floating action button to add notes.
         floatingActionbuttonForAddList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
